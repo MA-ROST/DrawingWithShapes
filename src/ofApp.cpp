@@ -15,6 +15,11 @@ void ofApp::setup() {
 //--------------------------------------------------------------
 void ofApp::update() {
 	if (!userIsEditingShape) return;
+	
+	if (!shapes.empty()) {
+		shapes.back()->setColor (shapeColor);
+		shapes.back()->setRotation (shapeRotation);
+	}
 }
 
 //--------------------------------------------------------------
@@ -47,8 +52,14 @@ void ofApp::keyPressed(int key) {
 		userIsEditingShape = true;
 		break;
 	case 'p':
+		if (!shapes.empty()) {
+			shapes.back()->setPosition (glm::vec2{x,y});
+		}
 		break;
-	case 'd':
+	case 'd': 
+		if (!shapes.empty()) {
+			shapes.pop_back();
+		}
 		break;
 	default:
 		std::cout << "Unknown key: " << static_cast<char>(key) << "\n";

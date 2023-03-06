@@ -7,16 +7,13 @@ Rect::Rect(const glm::vec2& position, const float rotation, const ofColor& color
 }
 
 void Rect::draw() {
-	std::cout << "Drawing: Rect\n";
-
 	ofPushMatrix();
 	ofPushStyle();
 	
-	ofTranslate(position); // Missing Args (WARNING! Properties of Shape need to be protected.)   
-	ofRotateRad(rotation); // Missing Args   
-	ofSetColor(color);	// Missing Args
+	ofTranslate(position);
+	ofRotateRad(rotation);
+	ofSetColor(color);
 
-	
 	ofRect (glm::vec3{0,0,0}, width, height);
 
 	ofPopStyle();

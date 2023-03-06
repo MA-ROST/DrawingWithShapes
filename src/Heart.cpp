@@ -7,8 +7,6 @@ Heart::Heart(const glm::vec2& position, const float rotation, const ofColor colo
 }
 
 void Heart::draw() {
-	std::cout << "Drawing: Heart\n";
-
 	ofPushMatrix();
 	ofPushStyle();
 	

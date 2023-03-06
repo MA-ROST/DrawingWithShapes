@@ -3,11 +3,10 @@
 #include <glm/vec2.hpp>
 
 class Shape {
+protected:
 	glm::vec2 position;
 	float rotation;
 	ofColor color;
-
-protected:
 	Shape(const glm::vec2& position, float rotation, const ofColor& color);
 
 public:

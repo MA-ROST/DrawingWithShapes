@@ -14,12 +14,21 @@ void ofApp::setup() {
 
 //--------------------------------------------------------------
 void ofApp::update() {
-	if (!userIsEditingShape) return;
-	
-	if (!shapes.empty()) {
-		shapes.back()->setColor (shapeColor);
-		shapes.back()->setRotation (shapeRotation);
+	if (!userIsEditingShape || shapes.empty()) return;
+
+
+	shapes.back()->setColor (shapeColor);
+	shapes.back()->setRotation (shapeRotation);
+
+
+	if (dynamic_cast <Rect*> (shapes.back().get())) {
+		dynamic_cast <Rect*> (shapes.back().get())->setDimensions (
+			rectangleWidth, rectangleHeight);
 	}
+	else if (dynamic_cast <Heart*> (shapes.back().get())) {
+		dynamic_cast <Heart*> (shapes.back().get())->setSize (heartSize);
+	}
+
 }
 
 //--------------------------------------------------------------

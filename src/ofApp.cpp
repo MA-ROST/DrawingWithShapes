@@ -19,6 +19,10 @@ void ofApp::update() {
 
 //--------------------------------------------------------------
 void ofApp::draw() {
+	for (const unique_ptr<Shape>& shape : shapes) {
+		shape->draw();
+	}
+
 	gui.draw();
 }
 
@@ -30,9 +34,14 @@ void ofApp::keyPressed(int key) {
 	const int y = ofGetMouseY();
 
 	switch (key) {
-	case 'r':
+		case 'r': // Adding a rect
+		shapes.push_back (std::make_unique <Rect> (
+			glm::vec2 {x, y}, shapeRotation, shapeColor, rectangleWidth,
+			rectangleHeight));
 		break;
-	case 'h':
+	case 'h': // Adding a heart
+		shapes.push_back (std::make_unique <Heart> (
+			glm::vec2 {x, y}, shapeRotation, shapeColor,heartSize));
 		break;
 	case 'e':
 		userIsEditingShape = true;

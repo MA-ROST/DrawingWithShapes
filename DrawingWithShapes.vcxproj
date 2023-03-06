@@ -194,7 +194,7 @@
     <ClCompile Include="..\..\..\addons\ofxGui\src\ofxSliderGroup.cpp" />
     <ClCompile Include="..\..\..\addons\ofxGui\src\ofxToggle.cpp" />
     <ClCompile Include="src\Rect.cpp" />
-    <ClCompile Include="src\Shape.c" />
+    <ClCompile Include="src\Shape.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Heart.h" />

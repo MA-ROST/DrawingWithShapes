@@ -43,7 +43,7 @@
     <ClCompile Include="src\Rect.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Shape.c">
+    <ClCompile Include="src\Shape.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>

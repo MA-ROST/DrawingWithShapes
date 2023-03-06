@@ -7,6 +7,7 @@ Rect::Rect(const glm::vec2& position, const float rotation, const ofColor& color
 }
 
 void Rect::draw() {
+	std::cout << "Drawing: Rect\n";
 }
 
 void Rect::setDimensions(int newWidth, int newHeight) {
